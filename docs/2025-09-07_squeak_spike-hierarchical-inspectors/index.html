@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Hierarchical Inspectors, Explorers in Debuggers | LinqLover</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Hierarchical Inspectors, Explorers in Debuggers" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A Quick UX Spike" />
+<meta property="og:description" content="A Quick UX Spike" />
+<link rel="canonical" href="https://linqlover.github.io/LinqLover/docs/2025-09-07_squeak_spike-hierarchical-inspectors/" />
+<meta property="og:url" content="https://linqlover.github.io/LinqLover/docs/2025-09-07_squeak_spike-hierarchical-inspectors/" />
+<meta property="og:site_name" content="LinqLover" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Hierarchical Inspectors, Explorers in Debuggers" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"A Quick UX Spike","headline":"Hierarchical Inspectors, Explorers in Debuggers","url":"https://linqlover.github.io/LinqLover/docs/2025-09-07_squeak_spike-hierarchical-inspectors/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/LinqLover/assets/css/style.css?v=6b84daf1a383fb57c0c62c41b1e79d42e5416347">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/LinqLover/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">Hierarchical Inspectors, Explorers in Debuggers</h1>
+      <h2 class="project-tagline">A Quick UX Spike</h2>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h2 id="motivation">Motivation</h2>
+
+<p>Inspectors and explorers have different strengths and weaknesses:</p>
+
+<ul>
+  <li><strong>Inspectors:</strong>
+    <ul>
+      <li>Offer more features: changing variables, drag’n’drop, truncation of long lists, most seamless stepping and error handling, introspection (copy expression/debug getter/…)</li>
+      <li>Currently widest support for different domains: collections, block closures, compiled methods, morphs, …</li>
+      <li>Can be customized by both users (custom fields) and domain developers (object-specific fields and menus)</li>
+    </ul>
+  </li>
+  <li><strong>Explorers:</strong>
+    <ul>
+      <li>Provide an immediate overview of all values in an object ➡️ faster navigation, serendipitous discoveries</li>
+      <li>Support hierarchical navigation through nested objects</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>How can we combine the best of both tools?</strong></p>
+
+<h2 id="approach">Approach</h2>
+
+<p>Use the more profound technical foundation of the inspector and extend it with an explorer-like, hierarchical UI.</p>
+
+<h2 id="case-study-1-hierarchical-inspectors">Case Study 1: Hierarchical Inspectors</h2>
+
+<ul>
+  <li>The tree contains the fields of the inspector:
+    <ul>
+      <li>The first field (<code class="language-plaintext highlighter-rouge">self</code>) becomes the root of the tree.</li>
+      <li>All other fields become the children of the root node.</li>
+      <li>Every tree node displays the name and the current value of the field.</li>
+      <li>All fields (but the first one) contain nested children from an inspector on their value.</li>
+    </ul>
+  </li>
+  <li>The tree is expanded to the width of the inspector, the value pane moves below the tree in place of the expression pane. The expression pane is removed.</li>
+  <li>Value pane and menus operate on the inspector that belongs to the selected field <em>(not yet implemented)</em>.</li>
+</ul>
+
+<p><img src="/LinqLover/docs/2025-09-07_squeak_spike-hierarchical-inspectors/hierarchical-inspector.png" alt="A hierarchical inspector on a `Rectangle`." /></p>
+
+<p><img src="/LinqLover/docs/2025-09-07_squeak_spike-hierarchical-inspectors/hierarchical-inspector-morph.png" alt="A hierarchical inspector on a `WatchMorph`." /></p>
+
+<p><strong>Challenges encountered:</strong></p>
+
+<ul>
+  <li>Evaluating all inspector fields eagerly during stepping causes serious performance issues in some problems (e.g., <code class="language-plaintext highlighter-rouge">World inspect</code> because of the screenshot field).
+    <ul>
+      <li>➡️ Premature solution: Time-out label computation of any field after 1 ms; for timed-out nodes, continue label computation in a background process and update the node when done.
+        <ul>
+          <li>Deferred label updates lead to flickering in the UI; process browser may be flooded with many ephemeral processes (UX limitation of the process browser).</li>
+          <li>Background path is reached rarely, maybe discard it.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Some field names are very long and shift values too much to the right.
+    <ul>
+      <li>➡️ Truncate labels <em>(not yet implemented)</em>.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Discussion:</strong></p>
+
+<ul>
+  <li>Only one pane for both value display and do-its left. No longer possible to read the full contents of a field without deleting/cutting the previous do-it. Muscle memory hurt because <code class="language-plaintext highlighter-rouge">Cmd + i -&gt; move cursor to the right -&gt; type</code> no longer works.
+    <ul>
+      <li>People might relearn. Debugger also offers no dedicated evaluation pane.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Upstream issues observed:</strong></p>
+
+<ul>
+  <li>Bug: Typing do-its into the value pane with a form breaks the text editor <em>(add fallback font?)</em>.</li>
+  <li>Bug/inconvenience: <code class="language-plaintext highlighter-rouge">PluggableTreeMorph</code> loses color of node label while selecting a node (<code class="language-plaintext highlighter-rouge">PluggableListMorph</code> does not).</li>
+  <li>Performance: Updating children and labels of single nodes is not efficient(ly possible?). Worlds with many hierarchical inspectors and stepping in debuggers with hierarchical inspectors (see below) feel (?) slightly slower.</li>
+  <li>Bug/inconvenience: Stepping in debuggers <code class="language-plaintext highlighter-rouge">changed: #objectChanged</code> turns the reported node green <em>(temporarily disabled for the spike)</em>.</li>
+</ul>
+
+<h2 id="case-study-2-hierarchical-inspectors-in-debugger">Case Study 2: Hierarchical Inspectors in Debugger</h2>
+
+<ul>
+  <li>The receiver inspector and context variables inspector at the bottom of full debuggers are replaced by hierarchical inspectors.</li>
+  <li>The value pane of the context variables inspectors is removed and the remaning panes are arranged equally to ensure minimum readability of tree nodes.</li>
+</ul>
+
+<p><img src="/LinqLover/docs/2025-09-07_squeak_spike-hierarchical-inspectors/debugger-hierarchical-inspectors-1.png" alt="Hierarchical inspectors in a debugger." /></p>
+
+<p><strong>Challenges encountered:</strong></p>
+
+<ul>
+  <li>Many tree items are still too long for being readable in the trees.
+    <ul>
+      <li>➡️ Minor layout optimization: Allow <code class="language-plaintext highlighter-rouge">PluggableTreeMorph&gt;&gt;SimpleHierarchicalListMorph&gt;&gt;#autoExpandSelector:</code> to discriminate by item to save 12 px before the root item.</li>
+      <li>➡️ Display full node label in tooltip.</li>
+      <li>❌ Still, not enough space.</li>
+    </ul>
+  </li>
+  <li>Long field names shift values much too much to the right.
+    <ul>
+      <li>➡️ Limit first column width to 50 % of the tree.</li>
+    </ul>
+  </li>
+  <li>Cannot view the full contents of a context variable any longer.
+    <ul>
+      <li>➡️ Idea 1 <em>(not yet implemented)</em>: Reuse central value pane for variables from both inspectors.
+        <ul>
+          <li>Possible disadvantages: It might become less clear to which inspector the displayed contents belong. Could automatically remove selection in the second-to-last used inspector, but this might be counterintuitive.</li>
+        </ul>
+      </li>
+      <li>➡️ Idea 2 <em>(not yet implemented)</em>: Stack two value panes on top of each other.
+        <ul>
+          <li>Even less vertical space within each value pane.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Other design considered <em>(not yet tried out):</em></strong></p>
+
+<ul>
+  <li>Merge both roots (<code class="language-plaintext highlighter-rouge">self</code> and <code class="language-plaintext highlighter-rouge">thisContext</code>) into a single hierarchical inspector (similar to mainstream debuggers with nested scopes):
+    <ul>
+      <li>More horizontal space for node labels and the value pane, but overseeing both instance and context variables at the same time would require frequent scrolling.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="case-study-3-traditional-inspectors-in-debugger-augmented-with-values">Case Study 3: Traditional Inspectors in Debugger, Augmented with Values</h2>
+
+<ul>
+  <li>Remain with the traditional inspectors layout in the debugger.</li>
+  <li>Augment inspector fields with their values.</li>
+</ul>
+
+<p><img src="/LinqLover/docs/2025-09-07_squeak_spike-hierarchical-inspectors/debugger-augmented-inspectors.png" alt="Augmented inspectors in a debugger." /></p>
+
+<p><strong>Discussion:</strong></p>
+
+<ul>
+  <li>More familiar, more space left for parallel inspection of receiver and context variables.</li>
+  <li>Potential faster overview/serendipitous discoveries but no hierarchical navigation.</li>
+  <li>Augmented values only really helpful for fields with short variable names.</li>
+  <li>More chaotic UI
+    <ul>
+      <li>➡️ Display values in secondary style (greyed out/smaller)? Not yet supported in <code class="language-plaintext highlighter-rouge">LazyListMorph</code>s.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="related-work">Related Work</h2>
+
+<ul>
+  <li>
+    <p><a href="https://lists.squeakfoundation.org/archives/list/squeak-dev@lists.squeakfoundation.org/thread/Y2WPPDJ7VP7LEOJ4ATFTAUGCHEBQH66P">Marcel Taeumel: [squeak-dev] Explorers in Debuggers</a> displays two regular explorers in a debugger with expression panes below the trees and removes the value panes. This gives more horizontal space to the trees but (i) offers no multi-line view of a variable value and (ii) requires more vertical space in total or shrinks the height of the remaining do-it panes a lot.</p>
+
+    <p><a href="https://lists.squeakfoundation.org/archives/list/squeak-dev@lists.squeakfoundation.org/thread/Y2WPPDJ7VP7LEOJ4ATFTAUGCHEBQH66P"><img src="https://lists.squeakfoundation.org/archives/list/squeak-dev@lists.squeakfoundation.org/message/Y2WPPDJ7VP7LEOJ4ATFTAUGCHEBQH66P/attachment/5/image.png" alt="Marcel Taeumel: Explorers in Debuggers" /></a></p>
+  </li>
+</ul>
+
+<h2 id="conclusion-and-future-work">Conclusion and Future Work</h2>
+
+<ul>
+  <li>Hierarchical inspectors as a standalone tool look promising. Will do further testing and try to adapt my own muscle memory.</li>
+  <li>Adding more information into the debugger is hard because of space constraints.
+    <ul>
+      <li>A more fundamental issue is the rigid arrangement of the debugger, which does not follow the small windows pattern seen in other tools.</li>
+      <li>Maybe we could come up with alternative, more flexible and more Smalltalk-ish debugger layouts in the future. Protruding tool windows that are detached from the main debugger window but stick to its borders (cf. Vivide)? One-click layout presets for showing/compacting single panes (cf. Pharo debugger)? What else?</li>
+    </ul>
+  </li>
+</ul>
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>

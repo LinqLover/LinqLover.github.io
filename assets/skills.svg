@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1024" height="1024" viewBox="0 0 1024 1024" xml:space="preserve">
+<desc>Created @ Wortwolken.com</desc>
+<defs><style type="text/css"> @import url(https://fonts.googleapis.com/css2?family=Source%20Code%20Pro&amp;display=swap) </style></defs>
+<rect x="0" y="0" width="100%" height="100%" fill="#fff"></rect>
+<g transform="matrix(1 0 0 1 522 512)" style=""  >
+		<text xml:space="preserve" font-family="Source Code Pro" font-size="100" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-opacity: 0.9446153846153846; fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-270" y="31.41" >Smalltalk</tspan></text>
+</g>
+<g transform="matrix(1 0 0 1 496 403)" style=""  >
+		<text xml:space="preserve" font-family="Source Code Pro" font-size="200" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-opacity: 0.8892307692307694; fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-360" y="62.83" >Squeak</tspan></text>
+</g>
+<g transform="matrix(1 0 0 1 540 640)" style=""  >
+		<text xml:space="preserve" font-family="Source Code Pro" font-size="200" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-opacity: 0.833846153846154; fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-360" y="62.83" >Python</tspan></text>
+</g>
+<g transform="matrix(1 0 0 1 518 772)" style=""  >
+		<text xml:space="preserve" font-family="Source Code Pro" font-size="155.08032840073795" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-opacity: 0.7784615384615386; fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-465.24" y="48.72" >TypeScript</tspan></text>
+</g>
+<g transform="matrix(1 0 0 1 450 280)" style=""  >
+		<text xml:space="preserve" font-family="Source Code Pro" font-size="124.06426272059036" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-opacity: 0.6123076923076927; fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-372.19" y="38.97" >JavaScript</tspan></text>
+</g>
+<g transform="matrix(1 0 0 1 468 175)" style=""  >
+		<text xml:space="preserve" font-family="Source Code Pro" font-size="134.40295128063957" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-opacity: 0.667692307692308; fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-161.28" y="42.22" >Bash</tspan></text>
+</g>
+<g transform="matrix(1 0 0 1 556 849)" style=""  >
+		<text xml:space="preserve" font-family="Source Code Pro" font-size="62.03213136029518" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-opacity: 0.3353846153846156; fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-241.93" y="19.49" >Ruby on Rails</tspan></text>
+</g>
+<g transform="matrix(1 0 0 1 182 507)" style=""  >
+		<text xml:space="preserve" font-family="Source Code Pro" font-size="144.74163984068878" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-opacity: 0.7230769230769234; fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-86.84" y="45.47" >C#</tspan></text>
+</g>
+<g transform="matrix(1 0 0 1 880 550)" style=""  >
+		<text xml:space="preserve" font-family="Source Code Pro" font-size="93.04819704044277" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-opacity: 0.5015384615384618; fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-111.66" y="29.23" >Java</tspan></text>
+</g>
+<g transform="matrix(1 0 0 1 706 197)" style=""  >
+		<text xml:space="preserve" font-family="Source Code Pro" font-size="72.37081992034439" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-opacity: 0.4461538461538464; fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-86.84" y="22.73" >HTML</tspan></text>
+</g>
+<g transform="matrix(1 0 0 1 386 574)" style=""  >
+		<text xml:space="preserve" font-family="Source Code Pro" font-size="62.03213136029518" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-opacity: 0.39076923076923104; fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-55.83" y="19.49" >C++</tspan></text>
+</g>
+<g transform="matrix(1 0 0 1 627 572)" style=""  >
+		<text xml:space="preserve" font-family="Source Code Pro" font-size="51.69344280024599" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-opacity: 0.2800000000000002; fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-46.52" y="16.24" >CSS</tspan></text>
+</g>
+<g transform="matrix(1 0 0 1 420 656)" style=""  >
+		<text xml:space="preserve" font-family="Source Code Pro" font-size="93.04819704044277" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-opacity: 0.5569230769230772; fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-27.91" y="29.23" >C</tspan></text>
+</g>
+</svg>
