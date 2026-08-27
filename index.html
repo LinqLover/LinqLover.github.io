@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="UTF-8"> <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Christoph Thiede | LinqLover</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Christoph Thiede" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="PhD Student of Software Engineering. Core Developer of Squeak. He/him." />
+<meta property="og:description" content="PhD Student of Software Engineering. Core Developer of Squeak. He/him." />
+<link rel="canonical" href="https://linqlover.github.io/LinqLover/" />
+<meta property="og:url" content="https://linqlover.github.io/LinqLover/" />
+<meta property="og:site_name" content="LinqLover" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Christoph Thiede" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"PhD Student of Software Engineering. Core Developer of Squeak. He/him.","headline":"Christoph Thiede","name":"LinqLover","url":"https://linqlover.github.io/LinqLover/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/LinqLover/assets/css/style.css?v=7a590d8c0bed4662870891c21e1083757d28e245"> <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/LinqLover/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+<body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    body {
+        --eye-size: calc(140px * 1);
+        --x: 0px;
+        --y: 0px;
+    }
+</style>
+
+<script>
+(() => {
+    const body = document.body;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+        body.style.setProperty('--x', '0px');
+        body.style.setProperty('--y', '0px');
+        return;
+    }
+    const xSteps = [-0.25, -0.20, -0.143, -0.071, -0.036, 0.036, 0.071, 0.143, 0.20, 0.25];
+    const ySteps = [-0.25, -0.20, -0.143, -0.071, -0.036, 0.036, 0.071, 0.143, 0.20, 0.25];
+    let lastColumn = -1;
+    let lastRow = -1;
+
+    const update = (clientX, clientY) => {
+        const width = window.innerWidth || 1;
+        const height = window.innerHeight || 1;
+        const column = Math.max(0, Math.min(9, Math.floor((clientX / width) * 10)));
+        const row = Math.max(0, Math.min(9, Math.floor((clientY / height) * 10)));
+        if (column === lastColumn && row === lastRow) return;
+        lastColumn = column;
+        lastRow = row;
+        body.style.setProperty('--x', `calc(var(--eye-size) * ${xSteps[column]})`);
+        body.style.setProperty('--y', `calc(var(--eye-size) * ${ySteps[row]})`);
+    };
+
+    const reset = () => {
+        lastColumn = -1;
+        lastRow = -1;
+        body.style.setProperty('--x', '0px');
+        body.style.setProperty('--y', '0px');
+    };
+
+    const updateFromPoint = (clientX, clientY) => update(clientX, clientY);
+    const updateFromTouch = (event) => {
+        const touch = event.touches[0] || event.changedTouches[0];
+        if (touch) updateFromPoint(touch.clientX, touch.clientY);
+    };
+
+    window.addEventListener('pointermove', (event) => update(event.clientX, event.clientY), { passive: true });
+    window.addEventListener('pointerdown', (event) => update(event.clientX, event.clientY), { passive: true });
+    window.addEventListener('pointerleave', reset, { passive: true });
+    window.addEventListener('touchstart', updateFromTouch, { passive: true });
+    window.addEventListener('touchmove', updateFromTouch, { passive: true });
+    window.addEventListener('touchend', reset, { passive: true });
+    window.addEventListener('touchcancel', reset, { passive: true });
+    document.addEventListener('mouseout', (event) => {
+        if (!event.relatedTarget) reset();
+    }, { passive: true });
+    window.addEventListener('blur', reset);
+    reset();
+})();
+</script>
+
+
+    
+
+    <header class="page-header" role="banner">
+        <h1 class="project-name">Christoph Thiede</h1>
+        
+        
+            <style>
+                .squeak-logo-wrap {
+                    position: absolute;
+                    top: 30px;
+                    right: 20px;
+                    height: 100px;
+                    display: inline-block;
+                    pointer-events: auto;
+                    transform: rotate(7deg); /* rotate wrapper so eyes overlay follows */
+                    transform-origin: top right; /* keep top-right anchored */
+                }
+                .squeak-logo-wrap .squeak-logo {
+                    height: 100%;
+                    display: block;
+                }
+                /* Mobile (Centered below h1) */
+                @media (max-width: 673px) {
+                    .squeak-logo-wrap {
+                        position: relative;
+                        display: table;
+                        width: auto;
+                        margin-left: auto;
+                        margin-right: auto;
+                        right: 0px;
+                        margin-top: -20px;
+                        margin-bottom: 5px;
+                        height: 100px;
+                        transform: none;
+                    }
+                    .squeak-logo-wrap .squeak-logo { transform: none; }
+                }
+            </style>
+            <div class="squeak-logo-wrap">
+                <img class="squeak-logo" src="./squeak.png" alt="Squeak Logo">
+                
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    .squeak-logo-wrap { display: inline-block; }
+    .eyes-layer {
+        position: absolute;
+        inset: 0;
+        z-index: 61;
+        pointer-events: none;
+        --eye-size: calc(140px * 1);
+    }
+
+    .eyes-eye {
+        position: absolute;
+        width: var(--eye-width);
+        height: var(--eye-height);
+        margin-left: calc(-1 * var(--eye-width) / 2);
+        margin-top: calc(-1 * var(--eye-height) / 2);
+        background: rgba(0, 0, 0, 1.0);
+        border-radius: 50%/50%;
+        border: 2px solid #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        pointer-events: none;
+    }
+
+    .eyes-eye .eyes-pupil {
+        width: calc(var(--eye-width) * var(--pupil-w));
+        height: calc(var(--eye-height) * var(--pupil-h));
+        background: #fff;
+        border-radius: 50%/50%;
+        transform: translate(
+            calc(var(--x, 0px) * (var(--eye-width) / var(--eye-size)) * var(--motion-scale-x, 1)),
+            calc(var(--y, 0px) * (var(--eye-height) / var(--eye-size)) * var(--motion-scale-y, 1))
+        );
+        transition: transform 420ms cubic-bezier(.22,.9,.3,1);
+        pointer-events: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .eyes-eye .eyes-pupil {
+            transition: none;
+            transform: translate(0, 0);
+        }
+    }
+
+    .eyes-eye.left {
+        left: calc(0.39 * 100%);
+        top: calc(0.54 * 100%);
+        --eye-width: calc(var(--eye-size) * 0.128);
+        --eye-height: calc(var(--eye-size) * 0.15);
+        --pupil-w: 0.39;
+        --pupil-h: 0.45;
+        /* motion scale to avoid pupil protruding: clamp to [0,1] of (2 - 2*pupilFraction) */
+        --motion-scale-x: clamp(0, calc(2 - 2 * var(--pupil-w)), 1);
+        --motion-scale-y: clamp(0, calc(2 - 2 * var(--pupil-h)), 1);
+    }
+    .eyes-eye.right {
+        left: calc(0.62 * 100%);
+        top: calc(0.55 * 100%);
+        --eye-width: calc(var(--eye-size) * 0.128);
+        --eye-height: calc(var(--eye-size) * 0.16);
+        --pupil-w: 0.39;
+        --pupil-h: 0.45;
+        --motion-scale-x: clamp(0, calc(2 - 2 * var(--pupil-w)), 1);
+        --motion-scale-y: clamp(0, calc(2 - 2 * var(--pupil-h)), 1);
+    }
+
+    @media (max-width: 673px) {
+        
+    }
+</style>
+
+<div class="eyes-layer" aria-hidden="true">
+    <div class="eyes-eye left"><div class="eyes-pupil"></div></div>
+    <div class="eyes-eye right"><div class="eyes-pupil"></div></div>
+</div>
+
+
+                
+            </div>
+        
+        
+         
+    </header>
+
+    <main id="content" class="main-content" role="main">
+        <p>Hi, I‘m Christoph! I am a PhD Student of software engineering at the <a href="https://hpi.de/swa">Software Architecture Group @ HPI</a> in Potsdam, Germany. My current research interests include:</p>
+
+<ul>
+  <li>exploratory programming</li>
+  <li>omniscient debugging</li>
+  <li>AI tools in programming</li>
+  <li>self-supporting programming systems</li>
+</ul>
+
+<p>My go-to vehicle for research projects and beloved second home is the <a href="https://squeak.org/">Squeak/Smalltalk environment</a>. Currently, I am serving as a member of the Squeak Oversight Board and as a core developer of the project.</p>
+
+<p>Spotlight of some things I’m proud of:</p>
+
+<ul>
+  <li><strong><a href="https://github.com/hpi-swa-lab/squeak-tracedebugger">TraceDebugger</a>:</strong> A back-in-time debugger for Squeak, featuring novel perspectives for state-centric exploration of program traces.</li>
+  <li><strong><a href="https://www.hpi.uni-potsdam.de/hirschfeld/publications/media/ThiedeTaeumelBoehmeHirschfeld_2024_TalkingToObjectsInNaturalLanguageTowardSemanticToolsForExploratoryProgramming_AcmDL.pdf">Talking to Objects in Natural Language</a>:</strong> Stop sending your Smalltalk objects messages, start chatting with them through an AI interface. I also wrote my <a href="https://www.researchgate.net/publication/384467824_The_Semantic_Workspace_Augmenting_Exploratory_Programming_with_Integrated_Generative_AI_Tools">master’s thesis</a> about this idea.</li>
+  <li><strong><a href="https://github.com/hpi-swa-lab/Squeak-SemanticText">SemanticText</a>:</strong> Framework, API clients, and GUIs to integrate AI models into Squeak. Supporting reasoning models, audio and vision, and the OpenAI Realtime API.</li>
+  <li><strong><a href="https://github.com/hpi-swa-lab/squeak-inbox-talk">Squeak Inbox Talk</a>:</strong> A unified mailing list reader and version control client for Squeak, integrated in the base image and actively used by parts of the community.</li>
+  <li><strong><a href="https://github.com/hpi-swa-lab/osvm-oopsie">Oopsie</a>:</strong> A proxy framework for the OpenSmalltalk-VM simulator, enabling the bootstrapping of Scorch/Sista and improving the debugging experience for VM components.</li>
+  <li><strong>Contributions to Squeak:</strong> I love to explore and improve various corners of the system, ranging from programming tools and debugging infrastructure over the Morphic UI framework to standard libraries such as the regular expression engine. I have supported recent Squeak <a href="https://squeak.org/release_notes/">releases</a> and co-authored the latest version of the free <a href="https://github.com/hpi-swa-lab/SqueakByExample-english?tab=readme-ov-file#readme">Squeak by Example textbook</a>.</li>
+</ul>
+
+<p>Check out my <a href="https://github.com/LinqLover">GitHub profile</a> for further projects, follow me on the <a href="https://lists.squeakfoundation.org/archives/search?q=christoph+thiede&amp;page=1&amp;sort=date-desc">squeak-dev mailing list</a>, stalk me on <a href="https://scholar.google.com/citations?user=VUL8kyoAAAAJ">Google Scholar</a> or <a href="https://orcid.org/0000-0002-7442-8216">ORCID</a>, or send me an <a href="mailto:christoph.thiede@outlook.de">e-mail</a>.</p>
+
+<h2 id="publications">Publications</h2>
+
+<ul>
+  <li>Christoph Thiede, Marius Dörbandt, Eliot Miranda, Marcel Taeumel, and Robert Hirschfeld. 2026. Proxies All the Way Down: Bootstrapping a Userland Speculative Optimizer for the OpenSmalltalk VM. In <em>Proceedings of the 2026 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software (Onward! ’26)</em>, October 4–9, 2026, Oakland, CA, USA. ACM, New York, NY, USA, 16 pages. <a href="https://doi.org/10.1145/3840586.3843214">To appear</a>.</li>
+  <li>Christoph Thiede, Tom Beckmann, Marcel Taeumel, and Robert Hirschfeld. 2026. <a href="https://dl.acm.org/doi/pdf/10.1145/3801119.3801129">Literate Exploratory Programming for Asynchronous Collaboration.</a> In <em>Companion Proceedings of the 10th International Conference on the Art, Science, and Engineering of Programming (‹Programming› Companion ’26)</em>, March 16–20, 2026, Munich, Germany. ACM, 11 pages. DOI: <a href="https://doi.org/10.1145/3801119.3801129">10.1145/3801119.3801129</a>. <a href="./slides/PX26%20Literate%20Exploratory%20Programming.pdf">Slides</a>.</li>
+  <li>Tom Beckmann, Christoph Thiede, Jens Lincke, and Robert Hirschfeld. 2026. <a href="https://arxiv.org/pdf/2603.05644v1.pdf">Hybrid Structured Editing: Structures for Tools, Text for Users.</a> In <em>The Art, Science, and Engineering of Programming</em>, Vol. 11, Issue 1, Article 1, February 12, 2026. AOSA, 31 pages. DOI: <a href="https://doi.org/10.22152/programming-journal.org/2026/11/1">10.22152/programming-journal.org/2026/11/1</a></li>
+  <li>Lukas Böhme, Christoph Thiede, Toni Mattis, Tom Beckmann, Jens Lincke, and Robert Hirschfeld. 2025. <a href="https://www.hpi.uni-potsdam.de/hirschfeld/publications/media/BoehmeThiedeMattisBeckmannLinckeHirschfeld_2025_TowardBridgingTheToolGapEquippingLargeLanguageModelsWithToolsToAnswerProgrammersQuestions_AuthorsVersion.pdf">Toward Bridging the Tool Gap: Equipping Large Language Models with Tools to Answer Programmers’ Questions.</a> In <em>Proceedings of the Workshop on Programming Abstractions and Interactive Notations, Tools, and Environments (PAINT)</em>, companion volume to the <em>Conference on Systems, Programming, Languages, and Applications: Software for Humanity (SPLASH)</em>, October 12-18, 2025, Singapore. ACM, 10 pages. DOI: <a href="https://dl.acm.org/doi/10.1145/3759534.3762682">10.1145/3759534.3762682</a></li>
+  <li>Christoph Thiede. 2024. <a href="https://github.com/LinqLover/semexp-thesis/releases/download/submission/semexp-thesis.pdf">The Semantic Workspace: Augmenting Exploratory Programming with Integrated Generative AI Tools.</a> Master’s Thesis. Hasso Plattner Institute, 161 pages. <a href="./slides/Swa24%20The%20Semantic%20Workspace.pdf">Defense slides</a>/<a href="https://linqlover.github.io/transcripts/Swa24%20The%20Semantic%20Workspace.html">defense blog post</a>.</li>
+  <li>Christoph Thiede, Marcel Taeumel, Lukas Böhme, and Robert Hirschfeld. 2024. <a href="https://dl.acm.org/doi/10.1145/3689492.3690049">Talking to Objects in Natural Language: Toward Semantic Tools for Exploratory Programming.</a> In <em>Proceedings of the 2024 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software (Onward! ’24)</em>, October 20–25, 2024, Pasadena, California. ACM, New York, NY, USA, 17 pages. DOI: <a href="https://dl.acm.org/doi/10.1145/3689492.3690049">10.1145/3689492.3690049</a>. <a href="./slides/Onward24%20Talking%20to%20Objects.pdf">Slides</a>/<a href="./posters/Onward24%20Talking%20to%20Objects.pdf">Poster</a>/<a href="https://linqlover.github.io/transcripts/Onward24%20Talking%20to%20Objects.html">Transcript</a>.</li>
+  <li>Christoph Thiede, Willy Scheibel, and Jürgen Döllner. 2024. <a href="https://doi.org/10.5220/0012393900003660">Bringing Objects to Life: Supporting Program Comprehension through Animated 2.5D Object Maps from Program Traces.</a> In <em>Proceedings of the 15th International Conference on Information Visualization Theory and Applications (IVAPP 2024)</em>, February 27–29, Rome, Italy. SciTePress, 9 pages. DOI: <a href="https://doi.org/10.5220/0012393900003660">10.5220/0012393900003660</a>. <a href="https://linqlover.github.io/trace4d/paper-ivapp.pdf">Preprint</a>/<a href="https://linqlover.github.io/trace4d/poster-ivapp.pdf">Poster</a>/<a href="https://linqlover.github.io/trace4d/slides-ivapp.pdf">Slides</a>.</li>
+  <li>Christoph Thiede, Marcel Taeumel, and Robert Hirschfeld. 2023. <a href="https://dl.acm.org/doi/10.1145/3622758.3622892">Time-Awareness in Object Exploration Tools: Toward In Situ Omniscient Debugging.</a> In <em>Proceedings of the 2023 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software (Onward! ’23)</em>, October 25–27, 2023, Cascais, Portugal. ACM, New York, NY, USA, 14 pages. DOI: <a href="https://doi.org/10.1145/3622758.3622892">10.1145/3622758.3622892</a>. <a href="https://linqlover.github.io/slides/Onward23%20Time%20Awareness.pdf">Slides</a>.</li>
+  <li>Christoph Thiede and Patrick Rein. 2023. <em><a href="https://wiki.squeak.org/squeak/6546">Squeak by Example.</a></em> 6.0 Edition. ISBN: 978-1-4476-2948-1. <a href="https://www.lulu.com/shop/patrick-rein-and-christoph-thiede/squeak-by-example-60/paperback/product-8vr2j2.html">Paperback</a>/<a href="https://github.com/hpi-swa-lab/SqueakByExample-english/releases/tag/6.0">PDF</a>.</li>
+  <li>Christoph Thiede, Marcel Taeumel, and Robert Hirschfeld. 2023. <a href="https://doi.org/10.1145/3594671.3594678">Object-Centric Time-Travel Debugging: Exploring Traces of Objects.</a> In <em>Companion Proceedings of the 7th International Conference on the Art, Science, and Engineering of Programming (&lt;Programming&gt;’23 Companion)</em>, March 13–17, 2023, Tokyo, Japan. ACM, New York, NY, USA, 7 pages. DOI: <a href="https://doi.org/10.1145/3594671.3594678">10.1145/3594671.3594678</a>. <a href="https://linqlover.github.io/slides/PX23%20Object%20Traces.pdf">Slides</a>.</li>
+  <li>Christoph Thiede, Willy Scheibel, Daniel Limberger, and Jürgen Döllner. 2022. <a href="https://www.researchgate.net/publication/360231022_Augmenting_Library_Development_by_Mining_Usage_Data_from_Downstream_Dependencies">Augmenting Library Development by Mining Usage Data from Downstream Dependencies.</a> In <em>Proceedings of 17th International Conference on Evaluation of Novel Approaches to Software Engineering (ENASE 2022)</em>. 221–232. DOI: <a href="https://doi.org/10.5220/0011093700003176">10.5220/0011093700003176</a>. <a href="https://linqlover.github.io/slides/ENASE22%20Downstream%20Dependencies.pdf">Slides</a>.</li>
+  <li>Christoph Thiede and Patrick Rein. 2021. <em><a href="https://wiki.squeak.org/squeak/6546">Squeak by Example.</a></em> Vol. 5.3.1.</li>
+</ul>
+
+<h2 id="talks">Talks</h2>
+
+<ul>
+  <li><a href="https://linqlover.github.io/docs/2026-06-03_SDRSM_Bootstrapping.html">How to Perform a Brain Surgery on Yourself: Safe Bootstrapping for Self-Supporting Systems</a>. On <em>HPI Research School on Systems Design Meeting</em>, June 3rd, 2026. Hasso Plattner Institute, Potsdam, Germany.</li>
+  <li><a href="https://raw.githubusercontent.com/hpi-swa-lab/osvm-oopsie/refs/heads/main/assets/slides.pdf">Wie wartet man die virtuelle Maschine für Squeak? (How do you maintain the VM for Squeak?)</a> On <a href="https://squeak.de/news/2025/10/18/squeak_treffen/"><em>Squeak Meeting 2025</em></a>, November 22, 2025. Squeak e.V., Potsdam, Germany.</li>
+  <li>Yaros: Yet Another Remote Object Server for Squeak. On <a href="https://squeak.de/news/2025/10/18/squeak_treffen/"><em>Squeak Meeting 2025</em></a>, November 22, 2025. Squeak e.V., Potsdam, Germany.</li>
+  <li><a href="https://linqlover.github.io/docs/2024-11-27_UKSTUG_SemanticText.html">SemanticText: Improving Exploratory Programming in Squeak with Generative AI.</a> On <a href="https://www.meetup.com/de-DE/ukstug/events/302453224/"><em>UKSTUG Online Meeting: Christoph Thiede on SemanticText and Guille Amaral on Webside</em></a>, November 27th, 2024. UK Smalltalk User Group, online.</li>
+  <li>Wie kann dir eine KI beim Explorieren der Objekte zur Seite stehen? (How Can AI Support You While Exploring Objects?) On <a href="https://squeak.de/news/2024/09/30/squeak_treffen/"><em>Squeak Meeting 2024</em></a>, November 2, 2024. Squeak e.V., Potsdam, Germany.</li>
+  <li>Wie kann eine KI die Squeak-Mailingliste zusammenfassen? (How Can AI Summarize the Squeak Mailing List?) On <a href="https://squeak.de/news/2023/10/02/squeak_treffen/"><em>Squeak Meeting 2023</em></a>, November 4, 2023. Squeak e.V., Potsdam, Germany.</li>
+  <li><a href="https://linqlover.github.io/slides/SqueakEv22%20TraceDebugger-de.pdf">Zurück in die Zukunft: Back-in-time-Debugging in Squeak</a> (Back to the Future: Back-in-Time Debugging in Squeak). On <a href="https://squeak.de/news/2022/10/21/squeak_treffen/"><em>Squeak Meeting 2022</em></a>, November 19, 2022. Squeak e.V., Potsdam, Germany.</li>
+  <li><a href="https://linqlover.github.io/slides/SqueakEv22%20MethodFinder2-de.pdf">Finden statt Suchen: Der Method-Finder wird abgesichert</a> (Don’t Search, Find: Securing the MethodFinder). On <a href="https://squeak.de/news/2022/10/21/squeak_treffen/"><em>Squeak Meeting 2022</em></a>, November 19, 2022. Squeak e.V., Potsdam, Germany.</li>
+  <li><a href="https://linqlover.github.io/slides/ACUD%20Sonyx.pdf">Auditory Displays in Programming.</a> On <a href="https://acudmachtneu.de/events/1827/making-things-audible/"><em>Making Things Audible</em></a>, March 5–6, 2022. ACUD MACHT NEU, Berlin, Germany.</li>
+  <li><a href="https://linqlover.github.io/slides/SqueakEv21%20Squeak%20Inbox%20Talk.pdf">Squeak Inbox Talk: Social Coding Made Easy.</a> On <a href="https://squeak.de/news/2021/10/19/squeak_treffen/"><em>Squeak Meeting 2021</em></a>, December 4, 2021. Squeak e.V., Potsdam, Germany.</li>
+  <li><a href="https://linqlover.github.io/slides/SqueakEv21W%20Debugging%20the%20Debugger.pdf">It’s Broken! How To Debug the Debugger.</a> On <a href="https://squeak.de/news/2021/02/09/squeak_treffen_demo/"><em>Squeak Winter Demos</em></a>, March 6, 2021. Squeak e.V., Virtual.</li>
+  <li><a href="https://linqlover.github.io/slides/SqueakEv21W%20TelegramBot.pdf">Social Media? A Telegram Bot for Squeak.</a> On <a href="https://squeak.de/news/2021/02/09/squeak_treffen_demo/"><em>Squeak Winter Demos</em></a>, March 6, 2021. Squeak e.V., Virtual.</li>
+</ul>
+
+<h2 id="2025-archive">2025 Archive</h2>
+
+<p>Find older experiences, education, and featured projects <a href="https://linqlover.github.io/archive.html">here</a>.</p>
+
+
+        <footer class="site-footer">
+            
+            <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+        </footer>
+    </main>
+</body>
+
+</html>
